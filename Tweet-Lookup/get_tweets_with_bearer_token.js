@@ -16,7 +16,7 @@ async function getRequest() {
     // specify Tweet IDs to fetch, and any additional fields that are required
     // by default, only the Tweet ID and text are returned
     const params = {
-        "ids": "1278747501642657792,1255542774432063488", // Edit Tweet IDs to look up
+        "ids": "1535640943348617219", // Edit Tweet IDs to look up
         "tweet.fields": "lang,author_id", // Edit optional query parameters here
         "user.fields": "created_at" // Edit optional query parameters here
     }
@@ -36,8 +36,23 @@ async function getRequest() {
     }
 }
 
-(async () => {
+// (async () => {
 
+//     try {
+//         // Make request
+//         const response = await getRequest();
+//         console.dir(response, {
+//             depth: null
+//         });
+
+//     } catch (e) {
+//         console.log(e);
+//         process.exit(-1);
+//     }
+//     process.exit();
+// })();
+
+async function getThread() {
     try {
         // Make request
         const response = await getRequest();
@@ -50,4 +65,6 @@ async function getRequest() {
         process.exit(-1);
     }
     process.exit();
-})();
+}
+
+getThread()
